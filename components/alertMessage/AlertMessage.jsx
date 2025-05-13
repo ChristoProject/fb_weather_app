@@ -1,8 +1,8 @@
 import { Text, View, Image } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { s } from "./AirQuality.style"
+import { s } from "./AlertMessage.style"
 
-export const AirQuality = (props) => {
+export const AlertMessage = (props) => {
     return (
         <View style={s.card}>
             <View style={s.icon}>
