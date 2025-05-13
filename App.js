@@ -1,6 +1,5 @@
-import { useFonts } from "expo-font";
 import { SafeAreaView } from "react-native";
-import { ImageBackground, Text } from "react-native";
+import { ImageBackground } from "react-native";
 import { s } from "./App.style";
 import backgroundImg from "./assets/background.png";
 import Home from "./pages/Home/Home";
@@ -14,10 +13,6 @@ function App() {
   const [forecast, setForecast] = useState();
   const [alert, setAlert] = useState();
   const [airQ, setAirQ] = useState();
-
-  const [isFontLoaded] = useFonts({
-    Helvetica: require("./assets/fonts/Helvetica.ttf"),
-  });
 
   useEffect(() => {
     getUserCoordinates();
@@ -81,7 +76,7 @@ function App() {
   }
 
   console.log("Coordinate", coordinates);
-  console.log("Dati meteo", weatherData);
+  console.log("Dati meteo", weather);
   console.log("Previsioni", forecast);
   console.log("Alert", alert);
   console.log("AirQ", airQ)

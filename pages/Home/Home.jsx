@@ -6,9 +6,13 @@ import { Ionicons } from "@expo/vector-icons";
 import { DailyForecast } from "../../components/dailyForecast/DailyForecast";
 import { HourlyForecast } from "../../components/hourlyForecast/HourlyForecast";
 import { TodayMeteo } from "../../components/todayMeteo/TodayMeteo";
+import { AirQuality } from "../../components/airQuality/AirQuality";
 
 function Home({ weather, forecast, alert, airQ }) {
   const currentInterpretation = getWeatherInterpretation(weather.weather[0].icon);
+  const alertMessage = alert?.alerts?.alert[0]?.event || null;
+  
+  console.log("Alert", alertMessage)
 
   return (
     <View style={s.container}>
@@ -21,7 +25,11 @@ function Home({ weather, forecast, alert, airQ }) {
           <Text style={{ fontSize: 110, fontWeight: "bold" }}>{Math.round(weather.main.temp)}°</Text>
           <Image style={s.currentWeatherIcon} source={currentInterpretation.image} />
         </View>
+        { alertMessage ? <AirQuality label={alertMessage} /> : null}
       </View>
+
+
+
       //Info su condizioni meteo della giornata
       <View style={s.body_info}>
         <TodayMeteo
