@@ -27,7 +27,6 @@ function Home({ weather, forecast, alert, airQ }) {
       </View>
 
 
-
       //Info su condizioni meteo della giornata
       <View style={s.body_info}>
         <TodayMeteo
@@ -36,6 +35,8 @@ function Home({ weather, forecast, alert, airQ }) {
           humidity={forecast.daily[0].humidity}
           wind={forecast.daily[0].wind_speed}
         />
+
+
         //Previsioni Orarie
         <View style={s.forecast_orario}>
           <View>
@@ -52,6 +53,8 @@ function Home({ weather, forecast, alert, airQ }) {
             ))}
           </ScrollView>
         </View>
+
+
         //Previsioni
         <View style={s.forecast}>
           <View style={s.forecastTitle}>
