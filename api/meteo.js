@@ -20,7 +20,7 @@ export class MeteoAPI {
   static async getAlerts(coords) {
     return (
       await axios.get(
-        `http://api.weatherapi.com/v1/alerts.json?key=d57438f354064702b6b125955252703&q=${coords.lat},${coords.lon}&lang=it&alerts=yes`
+        `https://api.weatherapi.com/v1/alerts.json?key=d57438f354064702b6b125955252703&q=${coords.lat},${coords.lon}&lang=it&alerts=yes`
       )
     ).data;
   }
