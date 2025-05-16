@@ -3,13 +3,11 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
   card: {
     flexDirection: "row",
-    width: "100%",
-    height: 50,
+    width: "auto",
+    height: 40,
     alignItems: "center",
     marginTop: 10,
-    //borderWidth: 2,
-    //borderColor: "#f5993d",
-    borderRadius:10,
+    borderRadius: 10,
     backgroundColor: "rgb(250, 231, 135)",
   },
 
@@ -17,18 +15,19 @@ export const s = StyleSheet.create({
     justifyContent: "start",
     width: "auto",
     paddingLeft: 15,
-    paddingRight: 15
+    paddingRight: 10,
   },
 
   labelContainer: {
     justifyContent: "center",
     alignItems: "center",
     width: "auto",
+    paddingRight: 20,
   },
 
   label: {
-    fontSize: 15,
-    fontWeight: "bold",
+    fontSize: 14,
+    fontWeight: "500",
     color: "black",
   },
 });

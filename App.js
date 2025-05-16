@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import { useEffect, useState } from "react";
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from "expo-location";
 import { MeteoAPI } from "./api/meteo";
+import { NavMenu } from "./components/navMenu/NavMenu";
 
 function App() {
   const [coordinates, setCoordinates] = useState();
@@ -79,11 +80,13 @@ function App() {
   console.log("Dati meteo", weather);
   console.log("Previsioni", forecast);
   console.log("Alert", alert);
-  console.log("AirQ", airQ)
+  console.log("AirQ", airQ);
 
   return (
     <ImageBackground source={backgroundImg} style={s.imgBG}>
-      <SafeAreaView style={s.container}>{weather && forecast && alert && <Home weather={weather} forecast={forecast} alert={alert} airQ={airQ} />}</SafeAreaView>
+      <SafeAreaView style={s.container}>
+        {weather && forecast && alert && <Home weather={weather} forecast={forecast} alert={alert} airQ={airQ} />}
+      </SafeAreaView>
     </ImageBackground>
   );
 }

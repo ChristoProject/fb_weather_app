@@ -23,20 +23,17 @@ function Home({ weather, forecast, alert, airQ }) {
           <Text style={{ fontSize: 110, fontWeight: "bold" }}>{Math.round(weather.main.temp)}°</Text>
           <Image style={s.currentWeatherIcon} source={currentInterpretation.image} />
         </View>
-        { alertMessage ? <AlertMessage label={alertMessage} /> : null}
+        {alertMessage ? <AlertMessage label={alertMessage} /> : null}
       </View>
 
-
-      //Info su condizioni meteo della giornata
       <View style={s.body_info}>
+        // Meteo di oggi
         <TodayMeteo
           min_temp={Math.round(forecast.daily[0].temp.min)}
           max_temp={Math.round(forecast.daily[0].temp.max)}
           humidity={forecast.daily[0].humidity}
           wind={forecast.daily[0].wind_speed}
         />
-
-
         //Previsioni Orarie
         <View style={s.forecast_orario}>
           <View>
@@ -53,9 +50,7 @@ function Home({ weather, forecast, alert, airQ }) {
             ))}
           </ScrollView>
         </View>
-
-
-        //Previsioni
+        //Previsioni future
         <View style={s.forecast}>
           <View style={s.forecastTitle}>
             <Text style={{ fontSize: 20, fontWeight: "bold" }}>Prossimi 5 giorni</Text>
